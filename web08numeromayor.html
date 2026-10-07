@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function getNumeroMayor(){
+            let numero1 = 99;
+            let numero2 = 99;
+            //necesito evaluar que numero es mayor de los dos
+            //tambien si son iguales
+            // y mostrar un alert con dicho numero mayor o son iguales
+            if(numero1 > numero2){
+                alert("El número mayor es: " + numero1);
+            } else if(numero2 > numero1){
+                alert("El número mayor es: " + numero2);
+            } else {
+                alert("Los números son iguales");
+            }
+            
+        }
+    </script>
+</head>
+<body>
+    <h1>Número mayor</h1>
+    <button onclick="getNumeroMayor()">
+        Número mayor
+</body>
+</html>
