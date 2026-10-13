@@ -19,11 +19,30 @@
            let resultado = document.getElementById("resultado");
               resultado.innerText = texto;
         }
+        
+        function ejecutarBucleWhile(){
+            // ESTOS BUCLES SON IGUALES, SOLO QUE LA CONDICION 
+            // QUE LE PONGAMOS NO SABEMOS CUANDO SE CUMPLIRÁ
+            //para este bucle necesito una variable para la condición
+            let contador = 1;
+            //mientras que contador no llegue a 14, hacemos instrucciones
+            let texto = "";
+            while (contador <= 14) {
+                //guardaremos en el texto el contador
+                texto += contador + ", ";
+                // debemos modificar la variable de la condición
+                contador += 1 ;
+            }
+           let resultado = document.getElementById("resultado");
+              resultado.innerText = texto;
+        }
+            
     </script>
 </head>
 <body>
-    <h1>Sintaxis de bucles</h1>
-    <button>Ejecutar for</button>
+    <h1>Ejemplos Sintaxis de bucles</h1>
+    <button onclick="ejecutarBucleFor()">Ejecutar for</button>
+    <button onclick="ejecutarBucleWhile()">Ejecutar while</button>
     <p id="resultado"></p>
 </body>
 </html>

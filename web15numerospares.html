@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function ejemplo() {
+            let listanumeros = document.getElementById("listanumeros");
+            //creamos un contenido para dibujar abajo en la lista
+            let contenido = "<li>2</li>";
+            contenido += "<li>4</li>";
+            contenido += "<li>6</li>";
+            listanumeros.innerHTML = contenido;
+        }
+
+        function generarPares() {
+            //recuperamos la lista de numeros para el dibujo
+            let listanumeros = document.getElementById("listanumeros");
+            let contenido = "";
+            //bucle que vaya del 1 al 20
+            for (let i = 1; i <= 20; i++){
+                //debemos preguntar qué números son pares
+                if (i % 2 == 0){
+                    //par
+                    contenido += "<li>" + i + "</li>";
+                }
+            }
+            //dibujamos en la lista el contenido html
+            listanumeros.innerHTML = contenido;
+        }
+    </script>
+</head>
+<body>
+    <h1>Números pares</h1>
+    <button onclick="generarPares()">
+        Mostrar pares
+    </button>
+    <ul id="listanumeros">
+    </ul>
+</body>
+</html>
