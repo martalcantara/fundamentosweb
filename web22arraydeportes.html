@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function mostrarFavoritos(){
+            //tenemos que buscar todos los input
+            let ckeckbox = document.getElementsByTagName("input");
+            //una variable para guardar el contenido de los checkbox
+            let contenido = "";
+            for (let chk of ckeckbox) {
+                if (chk.checked) {
+                    //Tenemos los chequeados
+                    //almacenamos el valor dentro del contenido
+                    contenido += chk.value + ", ";
+                }
+            }
+            //recuperamos el titulo resultado
+            let resultado = document.getElementById("resultado");
+            //dibujamos el contenido
+            resultado.innerText = contenido;
+        }
+    </script>
+</head>
+<body>
+    <h1>Deportes Favoritos</h1>
+    <button onclick="mostrarFavoritos()">Ver Favoritos</button>
+    </br>
+    <input type="checkbox" value="Fútbol"/>Fútbol</br>
+    <input type="checkbox" value="Petanca"/>Petanca</br>
+    <input type="checkbox" value="Dardos"/>Dardos</br>
+    <input type="checkbox" value="Curling"/>Curling</br>
+    <h2 id="resultado"></h2>
+
+    
+</body>
+</html>

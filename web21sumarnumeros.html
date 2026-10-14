@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function sumarNumeros() {
+           //queremos recuperar todas las cajas input
+           let cajas = document.getElementsByTagName("input");
+           // declaramos una variable para la suma
+           let suma = 0;
+           //recorremos cada caja para recuperar el valor
+           for (let imput of cajas){
+                //recuperamos el numero del valor de las cajas
+                let numero = parseInt(imput.value);
+                // sumamos cada numero
+                suma += numero;
+           }
+           // recuperamos el elemento resultado
+           let resultado = document.getElementById("resultado");
+           resultado.innerText = "la suma es " + suma;
+        }
+
+        
+        // para que vaya generando números aleatorios, necesitamos una función que genere números aleatorios. Para ello
+        function generarNumeros() {
+            let cajas = document.getElementsByTagName("input")
+            for (let input of cajas){
+                let random = parseInt(Math.random() * 100) + 1;
+                console.log(random);
+                input.value = random;
+            }
+        }
+        
+        //Para cuando se inicia la página
+        window.onload = function() {
+            generarNumeros();
+        }
+    </script>
+</head>
+<body>
+    <h1>Ejemplo Sumar Números</h1>
+    <h2 id="resultado"></h2>
+    <button onclick="generarNumeros()">Generar números</button>
+    <button onclick="sumarNumeros()">Sumar números</button>
+    <input type="number"/>
+    <input type="number"/>
+</body>
+</html>
