@@ -1,7 +1,8 @@
 {
-    "UNO": "Sacar a pasear a Coco",
-    "DOS": "Hacer la compra",
-    "TRES": "Deberes",
-    "CUATRO": "Limpiar la casa",
-    "CINCO": "Hacer la cena"
+  "UNO": "Sacar a pasear a la tortuga",
+  "DOS": "Comprar cerales",
+  "TRES": "Jugar al Fifa",
+  "CUATRO": "Partida de Poker",
+  "CINCO": "Limpiar el coche", 
+  "SEIS": "Ganar la Champions (Real Madrid)"
 }

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        async function MostrarJugadores(){
+            let path = "documents/jugadores.json";
+            //primero realizamos una petición
+             let response = await fetch(path);
+             //convertimos a json los datos de la respuesta
+            let datos = await response.json();
+            console.log(datos);
+            //ahora vamos a necesitar un contenido html para el dibujo
+            let contenido = "";
+            //recorremos cada jugador
+            for (let jugadores of datos){
+                //ahora hay que dibujar cada nombre de cada jugador en la lista
+                 contenido += "<li>" + jugadores.nombre + "</li>";
+
+            }
+            //buscamos la lista de jugadores en html
+            let lista = document.getElementById("listajugadores");
+            //dibujamos el contenido en la lista
+            lista.innerHTML = contenido;
+        }
+    </script>
+</head>
+<body>
+    <h1>Jugadores json</h1>
+    <button onclick="MostrarJugadores">Mostrar jugadores</button>
+    <ul id="listajugadores"></ul>
+</body>
+</html>
