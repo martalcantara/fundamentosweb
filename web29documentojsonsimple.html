@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        async function leerJsonSimple() {
+            let patch = "documents/tareas.json";
+            let response = await fetch(patch);
+            //el fichero tiene formato json
+            let datos = await response.json();
+            //dibujamos a ver que tenemos...
+            console.log(datos);
+            let uno = datos.UNO;
+            //dibujamos la tarea uno dentro de resultado
+            let resultado = document.getElementById("resultado");
+            resultado.innerText = uno;
+        }
+    </script>
+</head>
+<body>
+    <h1>Leer documento JSON simple</h1>
+    <button onclick="leerJsonSimple()">Leer JSON</button>
+    <p id="resultado"></p>
+</body>
+</html>
