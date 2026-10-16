@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function generarMascota() {
+            let cajaraza = document.getElementById("cajaraza");
+            let cajanombre = document.getElementById("cajanombre");
+            let cajaedad = document.getElementById("cajaedad");
+            //declaramos un objeto mascota
+            let mascota = new Object();
+            //con object, este objeto no tiene propiedades 
+            //por lo que tenemos que indicar sus propiedades
+            mascota.raza = cajaraza.value;
+            mascota.nombre = cajanombre.value;
+            mascota.edad = cajaedad.value;
+            //recuperamos el titulo resultado
+            let resultado = document.getElementById ("resultado");
+            //pintamos la mascota
+            resultado.innerText = mascota.nombre
+                + ", " + mascota.raza + ", " + mascota.edad;
+        }
+
+        function generarOtraMascota() {
+            //capturamos cada caja
+            let cajaraza = document.getElementById("cajaraza");
+            let cajanombre = document.getElementById("cajanombre");
+            let cajaedad = document.getElementById("cajaedad");
+            //creamos una mascota mediante sintaxis json
+            //la diferencia está en que tenemos que crear el objeto 
+            //y las propiedades a la vez
+            let mascota = {
+                nombre: cajanombre.value, // esto quiere decir que selecciona el valor que ha elegido la persona
+                raza: cajaraza.value,
+                edad: cajaedad.value
+            }
+            //capturamos el titulo resultado
+            let resultado = document.getElementById("resultado");
+            //dibujamos la mascota
+            resultado.innerText = mascota;
+        }
+    </script>
+</head>
+<body>
+    <h1>Objeto mascota</h1>
+    <button onclick="generarMascota()">Mostrar mascota</button>
+    <button onclick="generarOtraMascota()">Otra mascota</button>
+    <h2 style="color:blue" id="resultado"></h2>
+    Nombre: <input type="text" id="cajanombre"/>
+</br>
+</br>
+    Raza: <input type="text" id="cajaraza"/>
+</br>
+</br>
+    Edad: <input type="text" id="cajaedad"/>
+</body>
+</html>

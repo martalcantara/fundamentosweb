@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //vamos a declarar las personas 
+        let arraypersonas = [];
+        function crearPersona () {
+            //cada vez que el usuario pulse
+            //vamos a coger los datos y crear una nueva mascota
+            //recuperamos las cajas input
+            let cajanombre = document.getElementById("cajanombre");
+            let cajaemail = document.getElementById("cajaemail");
+            //creamos una nueva persona
+            let persona = new Object();
+            //asignamos las propiedades a las personas
+            persona.nombre = cajanombre.value;
+            persona.email = cajaemail.value;
+            //añadimos la persona
+            arraypersonas.push(persona);
+            //dibujamos las personas que llevamos creadas
+            let titulonumero = document.getElementById("titulonumero");
+            titulonumero.innerText = "Numero de personas: " + arraypersonas.length;
+        }
+        function dibujarPersonas(){
+            //dibujamos las filas en la tabla
+            let filas = "";
+            //recorremos las personas del array
+            for (let persona of arraypersonas){
+                //hacemos el dibujo de cada fila y sus columnas para nombre e email
+                filas += "<tr>";
+                filas += "<td>" + persona.nombre + "</td>";
+                filas += "<td>" + persona.email + "</td>";
+                filas += "</tr>";
+            }
+            //buscamos la tabla de personas
+            let tabla = document.getElementById("tablapersonas");
+            //dibujamos en la tabla las filas
+            tabla.innerHTML = filas;
+        }
+        
+    </script>
+</head>
+<body>
+    <h1> Ejemplo Array Personas Completo</h1>
+    <h3 style="color:green" id=""titulonumero"></h3>
+    <button onclick="crearPersona()">Crear persona</button>
+    <button onclick="dibujarPersonas()">Dibujar personas</button><br/>
+    Nombre: <input type="text" id="cajanombre"></br>
+    Email: <input type="text" id="cajaemail"></br>
+    <table border="1" id="tablapersonas"></table>
+</body>
+</html>
